@@ -2,7 +2,6 @@ package utils
 
 import (
 	"encoding/base64"
-	"fmt"
 )
 
 var Delimiter = "ThisIsTheDelimiter"
@@ -16,9 +15,6 @@ func Decrypt(data []byte) []byte {
 	if err != nil || n + 1 != base64.StdEncoding.DecodedLen(len(data)) {
 		panic(err)
 	}
-
-	fmt.Println("n: ", n)
-	fmt.Println("decodelen: ", base64.StdEncoding.DecodedLen(len(data)))
 
 	return dst
 }
