@@ -2,10 +2,14 @@ package main
 
 import (
 	. "../utils"
+	"fmt"
 	"io/ioutil"
 	"os"
+	"os/exec"
 	"strings"
 )
+
+const OutputPath = "/tmp/decrypted.elf"
 
 func main() {
 	// Read himself
@@ -30,8 +34,17 @@ func main() {
 	file := bytes[pos:]
 
 	// Write it
-	err = ioutil.WriteFile("decrypted.elf", Decrypt(file), 0755)
+	err = ioutil.WriteFile(OutputPath, Decrypt(file), 0755)
 	if err != nil {
 		panic(err)
 	}
+
+	// Execute the file
+	output, err := exec.Command(OutputPath).Output()
+	if err != nil {
+		panic(err)
+	}
+
+	// Show the output
+	fmt.Println(string(output))
 }
