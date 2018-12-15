@@ -23,7 +23,7 @@ func main() {
 	encrypted := append(stub, append([]byte(Delimiter), Encrypt(input)...)...)
 
 	// Write it
-	err = ioutil.WriteFile("encrypted.elf", encrypted, 0644)
+	err = ioutil.WriteFile("encrypted.elf", encrypted, 0755)
 	if err != nil {
 		panic(err)
 	}

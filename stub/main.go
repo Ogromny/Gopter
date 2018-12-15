@@ -30,7 +30,7 @@ func main() {
 	file := bytes[pos:]
 
 	// Write it
-	err = ioutil.WriteFile("decrypted.elf", Decrypt(file), 0644)
+	err = ioutil.WriteFile("decrypted.elf", Decrypt(file), 0755)
 	if err != nil {
 		panic(err)
 	}
