@@ -7,6 +7,9 @@ A simple POC of scantime crypter in Golang in just 110 LOC (comments included)
 - [x] Scantime
 - [x] \*Nix support
 - [x] Drop and launch
+- [ ] GUI
+- [ ] Cross platform
+- [ ] Binder
 
 ## Usage
 ```
