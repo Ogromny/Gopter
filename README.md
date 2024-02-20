@@ -1,21 +1,19 @@
 # Gopter
 
 ## Resume
-A simple POC of scantime crypter in Golang in just 110 LOC (comments included)
+A simple scantime "binder" in go in around 110 LOC.
 
-## Features
-- [x] Scantime
-- [x] \*Nix support
-- [x] Drop and launch
-- [ ] GUI
-- [ ] Cross platform
-- [ ] Binder
+For education only.
+
 
 ## Usage
 ```
-$ git clone https://github.com/Ogromny/Gopter
+$ git clone https://github.com/Ogromny/Gopter --depth 1
 $ cd Gopter
-$ ./build.sh
-$ ./builder < yourFile (you can test with sample.elf generated with ./build_sample_file.sh)
-$ ./encrypted.elf
+$ make builder
+$ make stub
+$ make hello
+$ ./builder hello
+$ ./binded
+$ make clean
 ```
